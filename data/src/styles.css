@@ -1,0 +1,323 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --background-color: #ecf0f1;
+    --card-background: #ffffff;
+    --text-color: #333333;
+    --border-radius: 8px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+form {
+    background-color: var(--card-background);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#testButton {
+    background-color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+#testButton:hover {
+    background-color: #34495e;
+}
+
+#preview {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* ComponentCard styles */
+.component-card {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.component-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.component-card.selected {
+    border: 2px solid var(--primary-color);
+    animation: pulse 1s;
+}
+
+.component-image {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.component-card h3 {
+    margin: 8px 0;
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+.component-card p {
+    margin: 4px 0;
+    color: var(--secondary-color);
+    font-size: 0.85rem;
+}
+
+.component-card-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-top: 8px;
+}
+
+.component-card-buttons button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background-color 0.3s ease;
+}
+
+.component-card-buttons button:first-child {
+    background-color: var(--primary-color, #007bff);
+    color: white;
+}
+
+.component-card-buttons button:last-child {
+    background-color: var(--secondary-color, #6c757d);
+    color: white;
+}
+
+.component-card-buttons button:hover {
+    opacity: 0.9;
+}
+
+/* ComponentModal styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    width: 90%;
+    max-width: 500px;
+    max-height: 65vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.modal-header {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.modal-header h2 {
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--secondary-color);
+}
+
+.modal-body {
+    padding: 1rem;
+    overflow-y: auto;
+    flex-grow: 1;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-image {
+    max-width: 100%;
+    max-height: 180px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.specifications {
+    margin-top: 1rem;
+}
+
+.specifications ul {
+    padding-left: 1.5rem;
+}
+
+.modal-footer {
+    padding: 1rem;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.modal-footer button {
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modal-footer button:hover {
+    background-color: #2980b9;
+}
+
+.link-pair {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.link-pair input {
+    flex: 1;
+}
+
+.remove-link {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#addLinkButton {
+    margin-bottom: 20px;
+    background-color: #2ecc71;
+}
+
+#addLinkButton:hover {
+    background-color: #27ae60;
+}
+
+/* Compatibility tags styles */
+#compatibilityTagsContainer {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+#compatibilityTagsContainer h3 {
+    width: 100%;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.compatibility-group {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 10px;
+    flex: 1 1 calc(33.333% - 15px);
+    min-width: 200px;
+}
+
+.compatibility-group h4 {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    color: var(--secondary-color);
+}
+
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+}
+
+.checkbox-item:hover {
+    background-color: #e9e9e9;
+}
+
+.checkbox-item input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.checkbox-item input[type="checkbox"]:checked + label {
+    font-weight: bold;
+    color: var(--primary-color);
+}
